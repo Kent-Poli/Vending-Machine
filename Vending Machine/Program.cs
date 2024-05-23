@@ -155,12 +155,19 @@ class Program
         while (true)
         {
             Console.WriteLine("\nWelcome to the Vending Machine!");
+            Console.WriteLine("");
             Console.WriteLine("1. Show all products");
+            Console.WriteLine("");
             Console.WriteLine("2. Insert money");
+            Console.WriteLine("");
             Console.WriteLine("3. Buy product");
+            Console.WriteLine("");
             Console.WriteLine("4. Show product details");
+            Console.WriteLine("");
             Console.WriteLine("5. End transaction");
+            Console.WriteLine("");
             Console.WriteLine("6. Exit");
+            Console.WriteLine("");
             Console.Write("Select an option: ");
             int choice = int.Parse(Console.ReadLine());
 
@@ -178,6 +185,9 @@ class Program
                         vendingMachine.InsertMoney(amount);
                         break;
                     case 3:
+                        var Allproducts = vendingMachine.ShowAll();
+                        Allproducts.ForEach(Console.WriteLine);
+
                         Console.Write("Enter product Id to buy: ");
                         int productId = int.Parse(Console.ReadLine());
                         vendingMachine.Purchase(productId);
